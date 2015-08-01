@@ -1,0 +1,55 @@
+<template name='home'>
+	<div id="home">
+		<div class="col-md-3" style="height: 100%">
+			<div class="select-items">
+				<select name="category" id="category" multiple class="form-control">
+					{{#each commodities}}
+					<option value="{{endPoint}}">{{name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<!-- <h1 class='title'>Data when you need it all around you</h1> -->
+		</div>
+		<div class="col-md-9" style="height: 100%">
+			<div class="loading" style="display: none;"><img src="/images/loading.gif" alt=""></div>
+			<div id="source">
+				<table>
+					<tr>
+						<th>Data Source</th>
+						<td class="source-name">
+							<span></span>
+						</td>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<td class="name">
+							<span></span>
+						</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td class="description">
+							<span></span>
+						</td>
+					</tr>
+					<tr>
+						<th>From Date</th>
+						<td class="from-date">
+							<span></span>
+						</td>
+					</tr>
+					<tr>
+						<th>To Date</th>
+						<td class="to-date">
+							<span></span>
+						</td>
+					</tr>
+				</table>
+				<div>
+					<div id="visualisation"></div>
+					<div class="data"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
