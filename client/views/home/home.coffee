@@ -112,10 +112,32 @@ Template.home.events
 			data = _.sortBy data, (name)->
 				return name
 			.reverse()
-			
+
 			plotLineGraph data, "visualisation", options
 
 
 Template.home.helpers
 	commodities:  ->
 		config.commodities
+	rates: ->
+		# ratesRates.findOne()
+		
+
+Template.home.rendered = ->
+	# rates.da
+	Meteor.call 'exchanges', (error, data)->
+		$(".exchanges .disclaimer").text data.disclaimer
+		$(".exchanges .base").text data.base
+		$(".exchanges .rates").text data.rates
+
+		$(".exchanges .ghs").text data.rates.GHS
+		$(".exchanges .gbp").text data.rates.GBP
+		$(".exchanges .usd").text data.rates.USD
+
+		console.log data.rates
+		doc = 
+			data: data
+			
+		Rates.insert doc, (err, resp)->
+			if err
+				console.log "something went wrong: #{err}"		

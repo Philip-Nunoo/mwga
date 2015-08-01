@@ -1,5 +1,40 @@
 <template name='home'>
 	<div id="home">
+		<div class="exchanges">
+			<div class="row">
+				<div class="container">
+					<h1>Global Exchange Rates</h1>
+					<div class="col-md-6">
+						<table>
+							<tr>
+								<th>Base</th>
+								<td class="base"></td>
+							</tr>
+							<tr>
+								<th>Rate</th>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-6">
+						<table>
+							<tr>
+								<th>Ghana Cedi (GHS)</th>
+								<td class="ghs"></td>
+							</tr>
+							<tr>
+								<th>US Dollar ($)</th>
+								<td class="usd"></td>
+							</tr>
+							<tr>
+								<th>English Pounds</th>
+								<td class="gbp"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="disclaimer"></div>
+			</div>
+		</div>
 		<div class="col-md-3" style="height: 100%">
 			<div class="select-items">
 				<select name="category" id="category" multiple class="form-control">
